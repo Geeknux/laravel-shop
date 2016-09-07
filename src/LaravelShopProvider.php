@@ -13,6 +13,7 @@ namespace Amsgames\LaravelShop;
 
 use Illuminate\Routing\Router;
 use Illuminate\Foundation\Support\Providers\RouteServiceProvider as ServiceProvider;
+use Illuminate\Support\Facades\Route;
 
 class LaravelShopProvider extends ServiceProvider
 {
@@ -29,9 +30,9 @@ class LaravelShopProvider extends ServiceProvider
      *
      * @return void
      */
-    public function boot(Router $router)
+    public function boot()
     {
-        parent::boot($router);
+        parent::boot();
 
         // Publish config files
         $this->publishes([
@@ -111,15 +112,15 @@ class LaravelShopProvider extends ServiceProvider
      *
      * @param Router $route Router.
      */
-    public function map(Router $router)
+    public function map()
     {
-        $router->group(['namespace' => 'Amsgames\LaravelShop\Http\Controllers'], function($router) {
+        Route::group(['namespace' => 'Amsgames\LaravelShop\Http\Controllers'], function($router) {
 
-            $router->group(['prefix' => 'shop'], function ($router) {
+            Route::group(['prefix' => 'shop'], function ($router) {
 
-                $router->get('callback/payment/{status}/{id}/{shoptoken}', ['as' => 'shop.callback', 'uses' => 'Shop\CallbackController@process']);
+                Route::get('callback/payment/{status}/{id}/{shoptoken}', ['as' => 'shop.callback', 'uses' => 'Shop\CallbackController@process']);
 
-                $router->post('callback/payment/{status}/{id}/{shoptoken}', ['as' => 'shop.callback', 'uses' => 'Shop\CallbackController@process']);
+                Route::post('callback/payment/{status}/{id}/{shoptoken}', ['as' => 'shop.callback', 'uses' => 'Shop\CallbackController@process']);
 
             });
 
