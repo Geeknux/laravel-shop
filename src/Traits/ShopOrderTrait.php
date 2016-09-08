@@ -172,7 +172,7 @@ trait ShopOrderTrait
      *
      * @return bool
      */
-    public function is($statusCode)
+    public function statusIs($statusCode)
     {
         return $this->attributes['statusCode'] == $statusCode;
     }
