@@ -1,6 +1,21 @@
-Digital Marmalade fork of LARAVEL SHOP for Laravel 5.2
+Geeknux fork of LARAVEL SHOP for Laravel 5.3
 
-Forked from ITwrx/laravel-shop for minor changes for Laravel 5.2 Compatibility.
+Forked from digitalmarmalade/laravel-shop for minor changes for Laravel 5.3 Compatibility.
+If You want to use this fork for your project please add these line to your project composer.
+
+```json
+    "repositories": [
+        {
+            "type": "git",
+            "url": "https://github.com/Geeknux/laravel-shop"
+        }
+    ],
+    "require": {
+        "php": ">=5.6.4",
+        "laravel/framework": "5.3.*",
+        "amsgames/laravel-shop" : "dev-dev-geek"
+    },
+```
 --------------------------------
 
 [![Latest Stable Version](https://poser.pugx.org/amsgames/laravel-shop/v/stable)](https://packagist.org/packages/amsgames/laravel-shop)
